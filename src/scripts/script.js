@@ -6,6 +6,7 @@ $(function () {
     RandomColor = "#" + RandomColor;
     $(".color_box").css("background-color", RandomColor);
     $(".color_code").text(RandomColor);
+    $(".code_copier").css("background-color", "#f8f9fa");
     $(".code_copier").text("copy");
 
     // Function For Copy Hex Code \
@@ -13,6 +14,13 @@ $(function () {
       copy(RandomColor);
 
       $(".code_copier").text("success");
+      $(".code_copier").css("background-color", "green");
+      $(".code_copier").css("border", "none");
+
+      setTimeout(() => {
+        $(".code_copier").css("background-color", "#f8f9fa");
+        $(".code_copier").text("copy");
+      }, 500);
     });
   });
 
